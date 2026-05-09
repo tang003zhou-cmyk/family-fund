@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { familyIntro, principles } from "@/data/philosophy";
+import { familyIntro, principles, fundManifesto } from "@/data/philosophy";
+import { trillionClub } from "@/data/history";
 
 export default function Home() {
   return (
-    <div className="space-y-20">
+    <div className="space-y-24">
       {/* Hero */}
       <section className="text-center">
         <div className="mb-6 text-6xl">🏮</div>
@@ -15,6 +16,31 @@ export default function Home() {
             {familyIntro}
           </p>
         </div>
+      </section>
+
+      {/* 起源故事 */}
+      <section className="rounded-2xl border border-amber-200 bg-amber-50/60 p-8">
+        <h2 className="mb-4 text-center text-xl font-semibold text-stone-800">
+          为什么 1973？
+        </h2>
+        <div className="mx-auto max-w-lg text-center text-sm leading-relaxed text-stone-600">
+          <p>
+            1973 不是某人的出生年，而是这个家族在时代洪流中找到自己位置的那一年。
+            从此，每一代人都往同一个方向多走一步——
+            从存活到积累，从积累到传承。
+          </p>
+          <p className="mt-3">
+            这个基金，是对那一年的致敬，也是对后人的委托。
+          </p>
+        </div>
+      </section>
+
+      {/* 基金会宣言 */}
+      <section className="mx-auto max-w-2xl text-center">
+        <div className="mb-4 text-4xl">📜</div>
+        <p className="whitespace-pre-line text-lg leading-relaxed text-stone-700 italic tracking-wide">
+          {fundManifesto}
+        </p>
       </section>
 
       {/* Core pillars */}
@@ -40,7 +66,7 @@ export default function Home() {
               </p>
               {p.analogy && (
                 <div className="rounded-lg bg-amber-50 p-3 text-xs leading-relaxed text-amber-800">
-                  <span className="font-semibold">说给家人听：</span>
+                  <span className="font-semibold">💡 说给家人听：</span>
                   {p.analogy}
                 </div>
               )}
@@ -59,18 +85,22 @@ export default function Home() {
             <div className="mb-2 text-3xl">🛡️</div>
             <h3 className="mb-2 text-lg font-semibold text-stone-900">40% 安心篮子</h3>
             <p className="mb-3 text-sm text-stone-600">一篮子 ETF 被动配置</p>
-            <ul className="space-y-1 text-sm text-stone-500">
+            <ul className="space-y-1.5 text-sm text-stone-500">
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" /> AI 主题 ETF
+                <span className="h-2 w-2 rounded-full bg-blue-500" />
+                AI 主题 ETF <span className="text-xs text-stone-400">(30%)</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-blue-400" /> 科技宽基 ETF
+                <span className="h-2 w-2 rounded-full bg-blue-400" />
+                科技宽基 ETF <span className="text-xs text-stone-400">(30%)</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-amber-400" /> 黄金 ETF
+                <span className="h-2 w-2 rounded-full bg-amber-400" />
+                黄金 ETF <span className="text-xs text-stone-400">(20%)</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> 新兴市场 ETF
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                新兴市场 ETF <span className="text-xs text-stone-400">(20%)</span>
               </li>
             </ul>
             <Link
@@ -84,18 +114,22 @@ export default function Home() {
             <div className="mb-2 text-3xl">🚀</div>
             <h3 className="mb-2 text-lg font-semibold text-stone-900">60% 进取标的</h3>
             <p className="mb-3 text-sm text-stone-600">精选主动配置</p>
-            <ul className="space-y-1 text-sm text-stone-500">
+            <ul className="space-y-1.5 text-sm text-stone-500">
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> 年轻人成长基金（25%）
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                年轻人成长基金 <span className="text-xs text-stone-400">(25%)</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-green-500" /> NVIDIA（15%）
+                <span className="h-2 w-2 rounded-full bg-green-500" />
+                NVIDIA <span className="text-xs text-stone-400">(15%)</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" /> 国内AI/机器人（15%）
+                <span className="h-2 w-2 rounded-full bg-indigo-400" />
+                国内AI/机器人 <span className="text-xs text-stone-400">(15%)</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-orange-400" /> 加密资产（10%）
+                <span className="h-2 w-2 rounded-full bg-orange-400" />
+                加密资产 <span className="text-xs text-stone-400">(10%)</span>
               </li>
             </ul>
             <Link
@@ -108,17 +142,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Manifesto */}
-      <section className="text-center">
-        <div className="mx-auto max-w-lg">
-          <p className="whitespace-pre-line text-lg leading-relaxed text-stone-700 italic">
-            &ldquo;{`家族基金不是一笔钱，是一个跨越时间的承诺。`}&rdquo;
-          </p>
+      {/* 万亿俱乐部快照 */}
+      <section>
+        <h2 className="mb-4 text-center text-xl font-semibold text-stone-800">
+          🌐 全球万亿俱乐部（2026年5月）
+        </h2>
+        <p className="mb-6 text-center text-sm text-stone-500">
+          我们的持仓覆盖了其中 7 家
+        </p>
+        <div className="overflow-x-auto rounded-xl border border-stone-200">
+          <table className="w-full text-sm">
+            <thead className="bg-stone-100 text-left text-xs text-stone-500">
+              <tr>
+                <th className="px-4 py-2 font-medium">#</th>
+                <th className="px-4 py-2 font-medium">公司</th>
+                <th className="px-4 py-2 font-medium">市值 (万亿)</th>
+                <th className="px-4 py-2 font-medium">备注</th>
+                <th className="px-4 py-2 font-medium">持仓</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-stone-100">
+              {trillionClub.map((c) => {
+                const inPortfolio = ["NVIDIA", "Alphabet (Google)", "Microsoft", "Amazon", "Apple", "Meta", "特斯拉"].includes(c.name);
+                return (
+                  <tr key={c.rank} className="hover:bg-stone-50">
+                    <td className="px-4 py-2.5 text-stone-400">{c.rank}</td>
+                    <td className="px-4 py-2.5 font-medium text-stone-800">{c.name}</td>
+                    <td className="px-4 py-2.5 text-stone-600">${c.cap.toFixed(3)}T</td>
+                    <td className="px-4 py-2.5 text-stone-500 text-xs">{c.note}</td>
+                    <td className="px-4 py-2.5">
+                      {inPortfolio ? (
+                        <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs text-emerald-700">持有</span>
+                      ) : (
+                        <span className="text-xs text-stone-300">—</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="flex justify-center gap-4">
+      <section className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <Link
           href="/philosophy"
           className="rounded-xl bg-amber-600 px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-amber-700"
