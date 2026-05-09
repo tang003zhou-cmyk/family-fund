@@ -16,3 +16,96 @@ body {
 .font-sans-narrow {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+
+/* Particle background animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-20px) rotate(180deg); opacity: 0.6; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(217, 119, 6, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(217, 119, 6, 0.4); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out;
+}
+
+/* Particle dots background */
+.bg-particles {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-particles::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(217, 119, 6, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(217, 119, 6, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-particles > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Data card hover effect */
+.data-card {
+  @apply rounded-xl border border-stone-200 bg-white p-6;
+  transition: all 0.3s ease;
+}
+
+.data-card:hover {
+  @apply shadow-lg border-amber-200;
+  transform: translateY(-2px);
+}
+
+/* Glowing accent line */
+.accent-line {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+  border-radius: 2px;
+}
