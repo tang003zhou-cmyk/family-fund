@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { familyIntro } from "@/data/family";
+import { storyIntro as familyIntro } from "@/data/family";
 import { FadeIn, AnimatedCounter } from "@/components/Animations";
 
 export default function Home() {
