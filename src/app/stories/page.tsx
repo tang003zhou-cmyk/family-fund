@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { storyIntro, storyChapters, generationsTimeline } from "@/data/family";
 import { FadeIn } from "@/components/Animations";
+import AudioPlayer from "@/components/AudioPlayer";
 
 export default function StoriesPage() {
   return (
@@ -17,29 +18,92 @@ export default function StoriesPage() {
               {storyIntro}
             </p>
           </div>
+
+          {/* 引言音频 */}
+          <div className="mx-auto mt-6 max-w-md">
+            <AudioPlayer src="/audio/story-intro.mp3" title="引言 · 故事的起点" />
+          </div>
+
           <div className="mx-auto mt-6 accent-line" />
         </section>
       </FadeIn>
 
-      {/* 章节 */}
-      <section className="space-y-10">
-        {storyChapters.map((ch, i) => (
-          <FadeIn key={ch.title} delay={i * 120}>
-            <div className="data-card p-8">
-              <div className="mb-6 flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-2xl animate-float"
-                  style={{ animationDelay: `${i * 2}s` }}>
+      {/* 第一章：家宴（已完成） */}
+      <FadeIn delay={100}>
+        <div className="data-card p-8 relative overflow-hidden">
+          {/* 完成标记 */}
+          <div className="absolute right-3 top-3 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">
+            ✅ 第一章
+          </div>
+
+          <div className="mb-6 flex items-center gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-2xl animate-float">
+              🍲
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold text-stone-900">饭桌上的家族</h2>
+              <p className="text-sm text-amber-700">过年家宴，是家族的年轮</p>
+            </div>
+          </div>
+
+          <div className="space-y-4 text-base leading-relaxed text-stone-600">
+            <p>
+              每年除夕，一大家人围坐在老宅的圆桌旁。菜是外婆从腊月就开始准备的——蒸鱼、扣肉、糯米藕、四喜丸子。
+            </p>
+            <p>
+              但比菜更重要的，是座位。谁坐在外婆左边，谁坐在舅舅旁边，谁今年被安排到了"小孩桌"——每一张座位的变动，都在悄悄讲述这个家族一年来的变化：谁结婚了，谁有了孩子，谁今年发了财，谁还在迷茫。
+            </p>
+            <p>
+              在周家，饭桌就是家族史的活页。
+            </p>
+            <p>
+              这张圆桌见证过太多。外公还在的时候，他坐在上席，一大家子二十几口人挤挤挨挨地坐三桌。后来外公走了，上席空了几年，没人敢坐那个位置。再后来，外婆说，日子还要过，饭还要吃。于是舅舅坐了上席，但每年开席前，都会先摆一副空碗筷，倒一杯酒。
+            </p>
+            <p>
+              那些消失的座位，比坐满的座位更有故事。
+            </p>
+            <p>
+              周家的团圆饭有一个规矩：每年每个人都要说一件事。不是总结一年，而是说一个最难忘的瞬间。这个规矩是外公定的。他说，不说出来的事，就像没发生过。
+            </p>
+          </div>
+
+          {/* 音频播放器 */}
+          <div className="mt-6">
+            <AudioPlayer src="/audio/chapter-jiayan-full.mp3" title="聆听 · 饭桌上的家族" />
+          </div>
+
+          <p className="mt-4 text-xs text-stone-400 text-right">
+            听录音不如听真人讲。等下次团圆饭，让长辈亲自说给你听。
+          </p>
+        </div>
+      </FadeIn>
+
+      {/* 其他章节（待修改） */}
+      <section className="space-y-6">
+        <FadeIn delay={150}>
+          <h2 className="text-center text-lg font-semibold text-stone-800">
+            更多故事 · 待续
+          </h2>
+          <p className="text-center text-sm text-stone-500">
+            后面的章节正在修改中，完成后会配上音频陆续上传
+          </p>
+        </FadeIn>
+
+        {storyChapters.slice(1).map((ch, i) => (
+          <FadeIn key={ch.title} delay={150 + i * 80}>
+            <div className="rounded-xl border border-dashed border-stone-200 bg-stone-50/50 p-6 opacity-60">
+              <div className="flex items-center gap-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-100 text-xl">
                   {ch.icon}
                 </div>
-                <div>
-                  <span className="text-xs text-stone-400">第 {i + 1} 章</span>
-                  <h2 className="text-xl font-semibold text-stone-900">{ch.title}</h2>
-                  <p className="text-sm text-amber-700">{ch.subtitle}</p>
+                <div className="flex-1">
+                  <h3 className="text-base font-medium text-stone-600">{ch.title}</h3>
+                  <p className="text-xs text-stone-400">{ch.subtitle}</p>
                 </div>
+                <span className="rounded-full border border-stone-200 bg-white px-3 py-1 text-xs text-stone-400">
+                  待修改
+                </span>
               </div>
-              <p className="whitespace-pre-line text-base leading-relaxed text-stone-600">
-                {ch.content}
-              </p>
             </div>
           </FadeIn>
         ))}
