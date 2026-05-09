@@ -6,13 +6,18 @@ import { useState } from "react";
 
 const links = [
   { href: "/", label: "首页" },
-  { href: "/philosophy", label: "投资哲学" },
-  { href: "/portfolio", label: "配置展示" },
+  { href: "/stories", label: "📖 故事·过去" },
+  { href: "/fund", label: "💰 基金·未来" },
 ];
 
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
     <nav className="sticky top-0 z-50 border-b border-stone-200 bg-white/90 backdrop-blur-sm">
@@ -22,8 +27,8 @@ export default function Nav() {
           className="flex items-center gap-2 text-lg font-semibold tracking-tight text-stone-800"
         >
           <span className="text-2xl">🏮</span>
-          <span className="hidden sm:inline">周氏家族基金</span>
-          <span className="sm:hidden">家族基金</span>
+          <span className="hidden sm:inline">周氏家族</span>
+          <span className="text-sm font-normal text-amber-600 hidden sm:inline">· 故事与基金</span>
         </Link>
 
         {/* Desktop nav */}
@@ -33,7 +38,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               className={`rounded-md px-3 py-1.5 text-sm transition-colors ${
-                pathname === l.href
+                isActive(l.href)
                   ? "bg-amber-100 text-amber-900 font-medium"
                   : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
               }`}
@@ -68,7 +73,7 @@ export default function Nav() {
               href={l.href}
               onClick={() => setOpen(false)}
               className={`block rounded-md px-3 py-2 text-sm transition-colors ${
-                pathname === l.href
+                isActive(l.href)
                   ? "bg-amber-100 text-amber-900 font-medium"
                   : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
               }`}

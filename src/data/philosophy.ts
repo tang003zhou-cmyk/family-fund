@@ -54,11 +54,4 @@ export const principles: Principle[] = [
   },
 ];
 
-export const familyIntro = `1973 — 一个起点。
-
-它不是某人的出生年，而是这个家族故事翻开的那一页。
-从那一页起，我们开始积累——不只是财富，更是经验、认知、和面对世界的底气。
-
-这个网站，是这些积累的数字锚点。
-它将记录每一笔投资背后的思考，每一份配置的理由，
-让后来的家人知道：我们为什么这样选择。`;
+// This data is now in family.ts
