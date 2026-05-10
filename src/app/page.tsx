@@ -85,9 +85,9 @@ export default function Home() {
         <section className="rounded-2xl border border-stone-200 bg-white p-6 text-center">
           <h2 className="mb-3 text-sm font-medium text-stone-600">🌐 家族数字遗产</h2>
           <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-6">
-            <a href="https://xima1988sky.de5.net" target="_blank" rel="noopener noreferrer"
+            <a href="https://qiuqiu.xima1988sky.de5.net" target="_blank" rel="noopener noreferrer"
               className="text-sm text-amber-700 hover:text-amber-900 underline underline-offset-2">
-              🐣 球球成长站 → xima1988sky.de5.net
+              🐣 翁一周成长站 → qiuqiu.xima1988sky.de5.net
             </a>
             <span className="hidden text-stone-300 sm:inline">|</span>
             <span className="text-sm text-stone-800 font-medium">
