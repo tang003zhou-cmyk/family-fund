@@ -111,6 +111,36 @@ export default function PodcastPage() {
       </FadeIn>
 
       <FadeIn delay={300}>
+        <div className="mx-auto max-w-2xl rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+          <h2 className="mb-1 text-lg font-semibold text-stone-800">📚 52周投资启蒙播客框架</h2>
+          <p className="mb-2 text-xs text-stone-400">
+            从0到1：构建你的投资世界观 · 六大阶段完整框架
+          </p>
+          <p className="mb-3 text-sm text-stone-600">
+            参考海外顶级财经博主过去20年经验，每周一期，从入门到形成自己的投资哲学。
+            涵盖启蒙篇（重新认识钱）、筑基篇（投资基本功）、进阶篇（策略与工具）、
+            赛道篇（投资未来）、实战篇（知行合一）、修心篇（投资哲学）。
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="/audio/52week-framework.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2.5 text-sm text-white transition-colors hover:bg-amber-700"
+            >
+              📄 下载PDF
+            </a>
+            <a
+              href="/audio/52week-framework.txt"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
+            >
+              📝 下载文字版（TXT）
+            </a>
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={350}>
         <div className="mx-auto max-w-xl rounded-xl border border-stone-200 bg-amber-50 p-5 text-center">
           <p className="text-xs text-stone-500">
             周氏家族基金 · 知识共享 · 不作投资建议
