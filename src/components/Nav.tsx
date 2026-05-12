@@ -8,6 +8,7 @@ const links = [
   { href: "/", label: "首页" },
   { href: "/stories", label: "📖 故事·过去" },
   { href: "/fund", label: "💰 基金·未来" },
+  { href: "/podcast", label: "🎙️ 播客" },
 ];
 
 export default function Nav() {
