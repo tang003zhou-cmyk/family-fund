@@ -38,9 +38,9 @@ export default function PodcastPage() {
 
       <FadeIn delay={150}>
         <div className="mx-auto max-w-2xl rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-1 text-lg font-semibold text-stone-800">📄 配套文稿（PDF）</h2>
+          <h2 className="mb-1 text-lg font-semibold text-stone-800">📄 配套文稿</h2>
           <p className="mb-4 text-xs text-stone-400">
-            完整播客脚本，含博主案例与十倍赛道分析
+            完整播客脚本，含博主案例与十倍赛道分析（PDF + 文字版）
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -48,14 +48,21 @@ export default function PodcastPage() {
               download
               className="inline-flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2.5 text-sm text-white transition-colors hover:bg-amber-700"
             >
-              ⬇️ 下载PDF
+              📄 下载PDF
+            </a>
+            <a
+              href="/audio/finance-gurus-podcast.txt"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
+            >
+              📝 下载文字版（TXT）
             </a>
             <a
               href="/audio/podcast-finance-gurus.mp3"
               download
               className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
             >
-              ⬇️ 下载MP3
+              🎧 下载MP3
             </a>
           </div>
         </div>
