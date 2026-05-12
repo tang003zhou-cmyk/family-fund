@@ -121,6 +121,14 @@ export default function PodcastPage() {
             涵盖启蒙篇（重新认识钱）、筑基篇（投资基本功）、进阶篇（策略与工具）、
             赛道篇（投资未来）、实战篇（知行合一）、修心篇（投资哲学）。
           </p>
+          <audio
+            controls
+            preload="metadata"
+            className="w-full mt-3 mb-4 rounded-lg"
+            style={{ height: 48 }}
+          >
+            <source src="/audio/52week-framework.mp3" type="audio/mpeg" />
+          </audio>
           <div className="flex flex-wrap gap-3">
             <a
               href="/audio/52week-framework.pdf"
@@ -135,6 +143,13 @@ export default function PodcastPage() {
               className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
             >
               📝 下载文字版（TXT）
+            </a>
+            <a
+              href="/audio/52week-framework.mp3"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
+            >
+              🎧 下载MP3
             </a>
           </div>
         </div>
