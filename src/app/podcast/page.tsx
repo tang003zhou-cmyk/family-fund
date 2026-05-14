@@ -90,6 +90,20 @@ export default function PodcastPage() {
             >
               🎧 下载上集
             </a>
+            <a
+              href="/audio/52week-framework.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
+            >
+              📄 下载PDF文稿
+            </a>
+            <a
+              href="/audio/52week-framework.txt"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
+            >
+              📝 下载文字版
+            </a>
           </div>
         </div>
       </FadeIn>
@@ -117,6 +131,20 @@ export default function PodcastPage() {
               className="inline-flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2.5 text-sm text-white transition-colors hover:bg-amber-700"
             >
               🎧 下载下集
+            </a>
+            <a
+              href="/audio/52week-framework.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
+            >
+              📄 下载PDF文稿
+            </a>
+            <a
+              href="/audio/52week-framework.txt"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
+            >
+              📝 下载文字版
             </a>
           </div>
         </div>
