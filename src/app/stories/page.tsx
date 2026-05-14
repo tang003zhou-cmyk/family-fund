@@ -23,7 +23,7 @@ const audioTitle: Record<number, string> = {
 
 export default function StoriesPage() {
   return (
-    <div className="space-y-20 bg-particles">
+    <div className="space-y-8 bg-particles">
       <FadeIn>
         <section className="text-center">
           <div className="mb-4 text-5xl animate-float">📖</div>
