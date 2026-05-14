@@ -3,22 +3,22 @@ import { storyIntro, allChapters, generationsTimeline } from "@/data/family";
 import { FadeIn } from "@/components/Animations";
 import AudioPlayer from "@/components/AudioPlayer";
 
-const audioMap: Record<number, string> = {
-  1: "/audio/chapter1-intro.mp3",
-  2: "/audio/ch2.mp3",
-  3: "/audio/ch3-part1.mp3",
-  5: "/audio/ch5.mp3",
-  4: "/audio/ch4.mp3",
-  6: "/audio/ch6-part1.mp3",
+const audioMap: Record<number, string[]> = {
+  1: ["/audio/chapter1-intro.mp3"],
+  2: ["/audio/ch2.mp3"],
+  3: ["/audio/ch3-part1.mp3", "/audio/ch3-part2.mp3"],
+  4: ["/audio/ch4.mp3"],
+  5: ["/audio/ch5.mp3"],
+  6: ["/audio/ch6-part1.mp3", "/audio/ch6-part2.mp3"],
 };
 
-const audioTitle: Record<number, string> = {
-  1: "第一章 家宴排序",
-  2: "第二章 拆迁惹的祸",
-  3: "第三章上 外公与大姑姑",
-  5: "第五章 总结",
-  4: "第四章 千万富翁",
-  6: "第六章上 未来已来",
+const audioTitle: Record<number, string[]> = {
+  1: ["第一章 家宴排序"],
+  2: ["第二章 拆迁惹的祸"],
+  3: ["第三章上 外公与大姑姑", "第三章下 老奶奶的ETF"],
+  4: ["第四章 千万富翁"],
+  5: ["第五章 总结"],
+  6: ["第六章上 未来已来", "第六章下 新世界"],
 };
 
 export default function StoriesPage() {
@@ -42,12 +42,10 @@ export default function StoriesPage() {
       <section className="space-y-8">
         {allChapters.map((ch, i) => (
           <FadeIn key={ch.id} delay={i * 80}>
-            <div className={`data-card p-8 relative overflow-hidden ${!ch.ready ? 'opacity-80' : ''}`}>
-              {ch.ready && (
-                <div className="absolute right-3 top-3 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">
-                  ✅ 第{ch.id}章
-                </div>
-              )}
+            <div className="data-card p-8 relative overflow-hidden">
+              <div className="absolute right-3 top-3 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">
+                {ch.ready ? "✅" : "🔄"} 第{ch.id}章
+              </div>
 
               <div className="mb-4 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-2xl">{ch.icon}</div>
@@ -78,17 +76,12 @@ export default function StoriesPage() {
                 </div>
               )}
 
-              {/* 音频 */}
-              {audioMap[ch.id] && (
-                <div className="mt-6">
-                  <AudioPlayer src={audioMap[ch.id]} title={`🎧 ${audioTitle[ch.id]}`} />
+              {/* 音频（支持一集或上下集） */}
+              {audioMap[ch.id] && audioMap[ch.id].map((src, ai) => (
+                <div className="mt-6" key={ai}>
+                  <AudioPlayer src={src} title={`🎧 ${audioTitle[ch.id][ai] || audioTitle[ch.id][0]}`} />
                 </div>
-              )}
-
-              {/* 完整音频标记 */}
-              <p className="mt-3 text-xs text-stone-400 italic">
-                {ch.ready ? "* 完整音频约15-30分钟，以上为精华节选版。后续可替换真人录音。" : "* 待修改内容并补全音频"}
-              </p>
+              ))}
             </div>
           </FadeIn>
         ))}
