@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FadeIn, AnimatedCounter, AnimatedBar } from "@/components/Animations";
+import AudioPlayer from "@/components/AudioPlayer";
 import { principles, fundManifesto } from "@/data/philosophy";
 import { trillionClub } from "@/data/history";
 
@@ -41,6 +42,9 @@ export default function FundPage() {
             {fundManifesto}
           </p>
           <div className="mx-auto mt-4 accent-line" />
+          <div className="mx-auto mt-6 max-w-md">
+            <AudioPlayer src="/audio/fund-intro.mp3" title="🎧 基金宣言与理念概述（13分钟）" />
+          </div>
         </section>
       </FadeIn>
 
@@ -68,6 +72,9 @@ export default function FundPage() {
               </div>
             </FadeIn>
           ))}
+        </div>
+        <div className="mx-auto mt-8 max-w-md">
+          <AudioPlayer src="/audio/fund-principles.mp3" title="🎧 四大核心理念详解（14分钟）" />
         </div>
       </section>
 
@@ -108,6 +115,13 @@ export default function FundPage() {
         </section>
       </FadeIn>
 
+      {/* 资产配置音频 */}
+      <FadeIn delay={250}>
+        <section className="mx-auto max-w-md">
+          <AudioPlayer src="/audio/fund-allocation.mp3" title="🎧 双轨制与资产配置详解（12分钟）" />
+        </section>
+      </FadeIn>
+
       {/* 万亿俱乐部 */}
       <FadeIn delay={250}>
         <section>
@@ -142,6 +156,13 @@ export default function FundPage() {
               </tbody>
             </table>
           </div>
+        </section>
+      </FadeIn>
+
+      {/* 万亿俱乐部音频 */}
+      <FadeIn delay={260}>
+        <section className="mx-auto max-w-md">
+          <AudioPlayer src="/audio/fund-companies.mp3" title="🎧 全球万亿俱乐部与持仓故事（11分钟）" />
         </section>
       </FadeIn>
 
