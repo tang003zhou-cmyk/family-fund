@@ -1,7 +1,21 @@
 import { CompanyHistory } from "@/data/history";
+import AudioPlayer from "@/components/AudioPlayer";
+
+const companyAudioMap: Record<string, string> = {
+  NVIDIA: "nvidia",
+  "Alphabet (Google)": "google",
+  Microsoft: "microsoft",
+  Amazon: "amazon",
+  AMD: "amd",
+  "Tesla 特斯拉": "tesla",
+  "台积电 TSMC": "tsmc",
+  Intel: "intel",
+  "Meta (Facebook)": "meta",
+  Apple: "apple",
+};
 
 export default function CompanyMilestone({ company }: { company: CompanyHistory }) {
-  const latestMilestones = company.milestones.slice(-3);
+  const audioFile = companyAudioMap[company.name];
 
   return (
     <details className="group rounded-xl border border-stone-200 bg-white transition-all open:shadow-md">
@@ -28,6 +42,14 @@ export default function CompanyMilestone({ company }: { company: CompanyHistory 
             </div>
           ))}
         </div>
+        {audioFile && (
+          <div className="mt-4">
+            <AudioPlayer
+              src={`/audio/company-${audioFile}.mp3`}
+              title={`🎧 ${company.name} 成长故事`}
+            />
+          </div>
+        )}
       </div>
     </details>
   );
