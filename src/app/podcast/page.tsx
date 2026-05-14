@@ -60,47 +60,63 @@ export default function PodcastPage() {
         </div>
       </FadeIn>
 
-      {/* 52周框架总览 */}
+      {/* 52周框架总览 - 上下集 */}
       <FadeIn delay={200}>
         <div className="mx-auto max-w-2xl rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-1 text-lg font-semibold text-stone-800">📚 52周框架总览</h2>
-          <p className="mb-2 text-xs text-stone-400">
-            从0到1：构建你的投资世界观 · 六大阶段完整框架
-          </p>
-          <p className="mb-3 text-sm text-stone-600">
-            参考海外顶级财经博主过去20年经验，每周一期，从入门到形成自己的投资哲学。
-            涵盖启蒙篇（重新认识钱）、筑基篇（投资基本功）、进阶篇（策略与工具）、
-            赛道篇（投资未来）、实战篇（知行合一）、修心篇（投资哲学）。
+          <div className="mb-3 flex items-center gap-2">
+            <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
+              📚 52周框架总览
+            </span>
+          </div>
+          <h2 className="mb-1 text-lg font-semibold text-stone-800">
+            52周投资启蒙播客框架（上）
+          </h2>
+          <p className="mb-4 text-xs text-stone-400">
+            时长约25分钟 · 2026年5月 · 周氏家族基金出品
           </p>
           <audio
             controls
             preload="metadata"
-            className="w-full mt-3 mb-4 rounded-lg"
+            className="w-full rounded-lg"
             style={{ height: 48 }}
           >
-            <source src="/audio/52week-framework.mp3" type="audio/mpeg" />
+            <source src="/audio/52week-framework-upper.mp3" type="audio/mpeg" />
           </audio>
-          <div className="flex flex-wrap gap-3">
+          <div className="mt-4 flex flex-wrap gap-3">
             <a
-              href="/audio/52week-framework.pdf"
+              href="/audio/52week-framework-upper.mp3"
               download
               className="inline-flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2.5 text-sm text-white transition-colors hover:bg-amber-700"
             >
-              📄 下载PDF
+              🎧 下载上集
             </a>
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={250}>
+        <div className="mx-auto max-w-2xl rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+          <h2 className="mb-1 text-lg font-semibold text-stone-800">
+            52周投资启蒙播客框架（下）
+          </h2>
+          <p className="mb-4 text-xs text-stone-400">
+            时长约25分钟 · 2026年5月 · 周氏家族基金出品
+          </p>
+          <audio
+            controls
+            preload="metadata"
+            className="w-full rounded-lg"
+            style={{ height: 48 }}
+          >
+            <source src="/audio/52week-framework-lower.mp3" type="audio/mpeg" />
+          </audio>
+          <div className="mt-4 flex flex-wrap gap-3">
             <a
-              href="/audio/52week-framework.txt"
+              href="/audio/52week-framework-lower.mp3"
               download
-              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
+              className="inline-flex items-center gap-2 rounded-lg bg-amber-600 px-5 py-2.5 text-sm text-white transition-colors hover:bg-amber-700"
             >
-              📝 下载文字版（TXT）
-            </a>
-            <a
-              href="/audio/52week-framework.mp3"
-              download
-              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
-            >
-              🎧 下载MP3
+              🎧 下载下集
             </a>
           </div>
         </div>
