@@ -24,19 +24,18 @@ const audioTitle: Record<number, string[]> = {
 export default function StoriesPage() {
   return (
     <div className="space-y-8 bg-particles">
-      <FadeIn>
-        <section className="text-center">
-          <div className="mb-4 text-5xl animate-float">📖</div>
-          <h1 className="mb-3 text-3xl font-bold tracking-tight text-stone-900">故事 · 过去</h1>
-          <div className="mx-auto max-w-xl">
-            <p className="whitespace-pre-line text-base leading-relaxed text-stone-600">{storyIntro}</p>
-          </div>
-          <div className="mx-auto mt-4 max-w-md">
-            <AudioPlayer src="/audio/intro.mp3" title="🎧 聆听序言" />
-          </div>
-          <div className="mx-auto mt-6 accent-line" />
-        </section>
-      </FadeIn>
+      {/* 顶部序言 — 默认可见，不依赖 FadeIn */}
+      <section className="text-center">
+        <div className="mb-4 text-5xl animate-float">📖</div>
+        <h1 className="mb-3 text-3xl font-bold tracking-tight text-stone-900">故事 · 过去</h1>
+        <div className="mx-auto max-w-xl">
+          <p className="whitespace-pre-line text-base leading-relaxed text-stone-600">{storyIntro}</p>
+        </div>
+        <div className="mx-auto mt-4 max-w-md">
+          <AudioPlayer src="/audio/intro.mp3" title="🎧 聆听序言" />
+        </div>
+        <div className="mx-auto mt-6 accent-line" />
+      </section>
 
       {/* 全部章节 */}
       <section className="space-y-8">
