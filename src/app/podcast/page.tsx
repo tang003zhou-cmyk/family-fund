@@ -110,6 +110,33 @@ export default function PodcastPage() {
         </div>
       </FadeIn>
 
+      <FadeIn delay={250}>
+        <div className="mx-auto max-w-2xl rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+          <h2 className="mb-1 text-lg font-semibold text-stone-800">💰 投资：抵御货币贬值的关键</h2>
+          <p className="mb-4 text-xs text-stone-400">
+            时长约18分钟 · 2026年5月 · 周氏家族基金出品
+          </p>
+          <audio
+            controls
+            preload="metadata"
+            className="w-full rounded-lg"
+            style={{ height: 48 }}
+          >
+            <source src="/audio/invest-currency-depreciation.mp3" type="audio/mpeg" />
+            您的浏览器不支持音频播放，请下载MP3文件收听。
+          </audio>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <a
+              href="/audio/invest-currency-depreciation.mp3"
+              download
+              className="inline-flex items-center gap-2 rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50"
+            >
+              🎧 下载MP3
+            </a>
+          </div>
+        </div>
+      </FadeIn>
+
       <FadeIn delay={300}>
         <div className="mx-auto max-w-2xl rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
           <h2 className="mb-1 text-lg font-semibold text-stone-800">📚 52周投资启蒙播客框架</h2>
